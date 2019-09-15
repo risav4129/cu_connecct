@@ -91,25 +91,28 @@ class _LoginState extends State<Login2> {
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top:60.0,left:20.0,bottom: 10.0,right: 10.0),
-                      child: Row(
-                        children: <Widget>[
-                          Text("Don't have an account? Create one:",style: TextStyle(fontSize: 16.0),),
-                          SizedBox(height: 5.0,
-                          width: 5.0,),
-                          InkWell(
-                              onTap: (){
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) => SignUP()));
-                              },
-                              child: Text("Signup",style: TextStyle(color: Colors.black,
-                                decoration: TextDecoration.none,
-                                decorationColor: Colors.black,
-                                fontWeight:FontWeight.bold,
-                                fontSize: 16.0,
-                                decorationStyle: TextDecorationStyle.wavy,),))
-                        ],
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Container(
+                        margin: EdgeInsets.only(top:60.0),
+                        child: Row(
+                          children: <Widget>[
+                            Text("Don't have an account? Create one:",style: TextStyle(fontSize: 14.0),),
+                            SizedBox(height: 5.0,
+                            width: 5.0,),
+                            InkWell(
+                                onTap: (){
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) => SignUP()));
+                                },
+                                child: Text("Signup",style: TextStyle(color: Colors.black,
+                                  decoration: TextDecoration.none,
+                                  decorationColor: Colors.black,
+                                  fontWeight:FontWeight.bold,
+                                  fontSize: 16.0,
+                                  decorationStyle: TextDecorationStyle.wavy,),))
+                          ],
+                        ),
                       ),
                     )
 

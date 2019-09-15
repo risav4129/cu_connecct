@@ -19,6 +19,7 @@ class _SignUPState extends State<SignUP> {
           color: Color.fromRGBO(20, 40, 49, 1),
         ),
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Container(
             height: MediaQuery.of(context).size.height*.87,
             width: MediaQuery.of(context).size.width*.8,
