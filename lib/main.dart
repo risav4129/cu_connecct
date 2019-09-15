@@ -1,105 +1,103 @@
+import 'package:cu_connecct/login2.dart';
 import 'package:flutter/material.dart';
-void main()=>runApp(Homepage());
+
+import 'signup.dart';
+
+void main() => runApp(Homepage());
+
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "CU_CONNECT",
-debugShowCheckedModeBanner: false,
-home: Scaffold(
-body: Container(
-  height: double.infinity,
-  width: double.infinity,
-  color: Color.fromRGBO(20,40,49,100),
-  child: Container(
-    margin: EdgeInsets.all(40.0),
-    height:400 ,
-    decoration: BoxDecoration(
-        color: Colors.white,
-      borderRadius: new BorderRadius.circular(30.0)
-    ),
-    child: Padding(
-      padding: const EdgeInsets.fromLTRB(18.0,150.0, 18.0, 40.0),
+      title: "CU_HUB",
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(body: home()),
+    );
+  }
+}
+
+class home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      color: Color.fromRGBO(20, 40, 49, 1),
       child: Container(
-          height: 380,
-          width: double.infinity,
-          decoration: BoxDecoration(
-
-          color:Colors.teal,
-          boxShadow: <BoxShadow>[BoxShadow(color:
-          Colors.black38,
-          offset: Offset(12.0, 10.0),
-          blurRadius: 10.0,)],
-          borderRadius:new BorderRadius.only(
+        margin: EdgeInsets.symmetric(
+            vertical: MediaQuery.of(context).size.height * .1,
+            horizontal: MediaQuery.of(context).size.width * .05),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width * .9,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: Colors.black38,
+              offset: Offset(12.0, 10.0),
+              blurRadius: 10.0,
+            )
+          ],
+          borderRadius: new BorderRadius.only(
             topLeft: const Radius.circular(80.0),
-          bottomRight: const Radius.circular(80.0),
-        ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(40.0,40.0,40.0,40.0),
-          child: Column(
-
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Text("Welcome to CU CONNECT",style: TextStyle(fontWeight: FontWeight.bold))
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0.0,40.0,0.0,0.0),
-                child: Row(
-                  children: <Widget>[
-                    ButtonTheme(
-                      //padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-                      minWidth: 160,
-                      height: 50,
-                      buttonColor: Colors.tealAccent,
-                      child: RaisedButton(
-                        onPressed: (){},
-                        shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                        child: Text("Sign UP"),),
-                    )],
-                    ),
-              ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 2.0,left: 55.0),
-                    child: Row(
-                      children: <Widget>[
-                        Text("New User",style: TextStyle(fontSize: 12.0),)
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 40.0),
-                    child: Row(
-                      children: <Widget>[
-                        ButtonTheme(
-                          minWidth: 160,
-                          height: 50,
-                          buttonColor: Colors.tealAccent,
-
-                          child: RaisedButton(
-                            onPressed: (){},
-                            shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                            child: Text("Login"),),
-                        )
-                ],
-              ),
-                  ),
-              Padding(
-                padding: const EdgeInsets.only(left:45.0,top: 2.0),
-                child: Row(
-                  children: <Widget>[Text("Registred User",style: TextStyle(fontSize: 12.0),)],
-                ),
-              )
-            ],
+            bottomRight: const Radius.circular(80.0),
           ),
         ),
-),
-    ),
-  ),
-),
-),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text("Welcome to CU CONNECT",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
+                  decorationColor: Color.fromRGBO(20,40,49,1)
+                )),
+            Container(
+              margin: EdgeInsets.only(left: 10.0, top: 30.0),
+              child: ButtonTheme(
+                //padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+
+                minWidth: 220,
+                height: 60,
+                buttonColor: Color.fromRGBO(20, 40, 49, 1),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignUP()));
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
+                  child: Text(
+                    "Sign UP",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10.0, top: 30.0),
+              child: ButtonTheme(
+                minWidth: 220,
+                height: 60,
+                buttonColor: Color.fromRGBO(20, 40, 49, 1),
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Login2()));
+                  },
+                  shape: RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(30.0)),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
