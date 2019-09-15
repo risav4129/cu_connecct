@@ -91,8 +91,8 @@ class _SignUPState extends State<SignUP> {
                         child: new TextFormField(
                           decoration: new InputDecoration(
                             border: OutlineInputBorder(),
-                            hintText: " Confirm Password",
-                            labelText: "Confirm Password",
+                           /* hintText: " Confirm Password",
+                            labelText: "Confirm Password",*/
                             labelStyle: TextStyle(fontSize: 20.0)
                           ),
                           keyboardType: TextInputType.text,
